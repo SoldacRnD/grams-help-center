@@ -1,0 +1,253 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #050608;
+  color: #f6f5f4;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  padding: 24px;
+  background: #0f1117;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h1 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: #c7c9d3;
+  text-decoration: none;
+}
+
+.sidebar nav a:hover {
+  color: #ffffff;
+}
+
+.content {
+  flex: 1;
+  padding: 32px 40px;
+  max-width: 960px;
+}
+
+.content h1, .content h2, .content h3 {
+  color: #ffffff;
+}
+
+.content img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 12px 0;
+}
+
+.content code {
+  background: rgba(255,255,255,0.06);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.content pre {
+  background: rgba(255,255,255,0.06);
+  padding: 12px 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+/* --- Public Help Center (Book VI) --- */
+.hc-top {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(5,6,8,.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.hc-top-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.hc-brand {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+.hc-nav a {
+    color: rgba(255,255,255,.8);
+    text-decoration: none;
+    margin-left: 12px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+    .hc-nav a.active {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
+
+.hc-wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 26px 16px 56px;
+}
+
+.hc-hero h1 {
+    margin: 10px 0 6px;
+    font-size: 40px;
+}
+
+.muted {
+    opacity: .78;
+}
+
+.hc-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.hc-card {
+    display: block;
+    padding: 16px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.04);
+}
+
+    .hc-card:hover {
+        border-color: rgba(255,255,255,.18);
+        background: rgba(255,255,255,.06);
+    }
+
+    .hc-card h2 {
+        margin: 0 0 6px;
+        font-size: 18px;
+    }
+
+    .hc-card p {
+        margin: 0;
+        opacity: .82;
+        line-height: 1.35;
+    }
+
+.hc-section {
+    margin-top: 32px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.hc-faq details {
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.03);
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin: 10px 0;
+}
+
+.hc-faq summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.hc-foot {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.hc-article {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 28px 16px 56px;
+    color: #fff;
+}
+
+    .hc-article h1 {
+        font-size: 38px;
+        margin: 10px 0 6px;
+    }
+
+    .hc-article h2 {
+        margin-top: 26px;
+    }
+
+    .hc-article ol {
+        line-height: 1.6;
+    }
+
+.callout {
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin: 14px 0;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.04);
+}
+
+    .callout.important {
+        border-color: rgba(212,175,55,.35);
+        background: rgba(212,175,55,.10);
+    }
+
+.shot {
+    margin: 14px 0;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255,255,255,.03);
+}
+
+    .shot img {
+        width: 100%;
+        display: block;
+    }
+
+    .shot figcaption {
+        padding: 10px 12px;
+        font-size: 13px;
+        opacity: .8;
+    }
+
+.hc-next {
+    margin-top: 26px;
+}
+
+.hc-btn {
+    display: inline-block;
+    padding: 12px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.14);
+    text-decoration: none;
+    color: #fff;
+    font-weight: 800;
+}
+
+    .hc-btn:hover {
+        background: rgba(255,255,255,.06);
+    }
