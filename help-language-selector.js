@@ -1,15 +1,16 @@
 (function () {
   "use strict";
 
+  const languages = ["pt", "es"];
   const segments = window.location.pathname.split("/").filter(Boolean);
-  const pageName = segments.at(-1);
-  if (!pageName || !pageName.endsWith(".html")) return;
-
-  const possibleLanguage = segments.at(-2);
-  const currentLanguage = ["pt", "es"].includes(possibleLanguage)
-    ? possibleLanguage
-    : "en";
-  const baseSegments = segments.slice(0, currentLanguage === "en" ? -1 : -2);
+  const lastSegment = segments.at(-1);
+  const languageRoot = languages.includes(lastSegment);
+  const possibleLanguage = languageRoot ? lastSegment : segments.at(-2);
+  const currentLanguage = languages.includes(possibleLanguage) ? possibleLanguage : "en";
+  const pageName = (!lastSegment || languageRoot) ? "index.html" : lastSegment;
+  const baseSegments = languageRoot
+    ? segments.slice(0, -1)
+    : segments.slice(0, currentLanguage === "en" ? -1 : -2);
   const basePath = baseSegments.length ? `/${baseSegments.join("/")}` : "";
   const labels = { en: "EN", pt: "PT", es: "ES" };
   const selector = document.createElement("nav");
@@ -24,12 +25,9 @@
     link.href = language === "en"
       ? `${basePath}/${pageName}`
       : `${basePath}/${language}/${pageName}`;
-    if (language === currentLanguage) {
-      link.setAttribute("aria-current", "page");
-    }
+    if (language === currentLanguage) link.setAttribute("aria-current", "page");
     selector.appendChild(link);
   });
 
-  const headerInner = document.querySelector(".hc-top-inner");
-  if (headerInner) headerInner.appendChild(selector);
+  document.querySelector(".hc-top-inner")?.appendChild(selector);
 })();

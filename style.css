@@ -282,3 +282,16 @@ body {
 .hc-language-selector a:hover {
     color: #fff;
 }
+/* Help Center header layout: retain all guides and language choices on every screen. */
+.hc-top-inner { flex-wrap: wrap; }
+.hc-nav { display: flex; flex: 1 1 680px; flex-wrap: wrap; gap: 8px 14px; }
+.hc-nav a { margin-left: 0; }
+.hc-language-selector { flex: 0 0 auto; }
+
+@media (max-width: 760px) {
+  .hc-top-inner { gap: 10px; padding: 11px 16px; }
+  .hc-nav { order: 3; flex-basis: 100%; flex-wrap: nowrap; overflow-x: auto; padding: 2px 0 4px; scrollbar-width: thin; }
+  .hc-nav a { flex: 0 0 auto; white-space: nowrap; font-size: 13px; }
+  .hc-language-selector { margin-left: auto; }
+  .hc-hero h1, .hc-article h1 { font-size: 32px; }
+}
