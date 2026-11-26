@@ -295,3 +295,11 @@ body {
   .hc-language-selector { margin-left: auto; }
   .hc-hero h1, .hc-article h1 { font-size: 32px; }
 }
+/* Preserve every instructional visual's native composition. */
+.shot picture { display: block; }
+.shot img {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: auto;
+    object-fit: contain;
+}
